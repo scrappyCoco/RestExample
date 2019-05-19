@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{FFDEBC4F-4D2F-42C5-987C-AC611CCD049C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{D4F9FB1A-11EA-47DA-94E0-DBB37B811776}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{362132E8-A5DF-473B-8213-40FBA06568BD}"
+ProjectSection(SolutionItems) = preProject
+	Scripts\docker-compose.yml = Scripts\docker-compose.yml
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElasticSearch", "ElasticSearch", "{CA67F85A-84FB-4582-9BCC-3CD64647475C}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\ElasticSearch\MyRestLogIndexTemplate.txt = Scripts\ElasticSearch\MyRestLogIndexTemplate.txt
+		Scripts\ElasticSearch\MyRestLogLifecyclePolicy.txt = Scripts\ElasticSearch\MyRestLogLifecyclePolicy.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSite", "WebSite\WebSite.csproj", "{0550F297-47CB-4816-AB32-8302C77B339A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElasticConfigurator", "ElasticConfigurator\ElasticConfigurator.csproj", "{60F7046E-4CBE-439A-BB56-AC5B11BD5B41}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LogStash", "LogStash", "{4A723462-6B05-487E-B725-C3B8C5EACE6B}"
+ProjectSection(SolutionItems) = preProject
+	Scripts\LogStash\Dockerfile = Scripts\LogStash\Dockerfile
+	Scripts\LogStash\logstash.conf = Scripts\LogStash\logstash.conf
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kibana", "Kibana", "{7646933E-D4B6-41BF-8FEA-FA7BADAD76E2}"
+ProjectSection(SolutionItems) = preProject
+	Scripts\Kibana\export.json = Scripts\Kibana\export.json
+EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFDEBC4F-4D2F-42C5-987C-AC611CCD049C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFDEBC4F-4D2F-42C5-987C-AC611CCD049C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFDEBC4F-4D2F-42C5-987C-AC611CCD049C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFDEBC4F-4D2F-42C5-987C-AC611CCD049C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4F9FB1A-11EA-47DA-94E0-DBB37B811776}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4F9FB1A-11EA-47DA-94E0-DBB37B811776}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4F9FB1A-11EA-47DA-94E0-DBB37B811776}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4F9FB1A-11EA-47DA-94E0-DBB37B811776}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0550F297-47CB-4816-AB32-8302C77B339A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0550F297-47CB-4816-AB32-8302C77B339A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0550F297-47CB-4816-AB32-8302C77B339A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0550F297-47CB-4816-AB32-8302C77B339A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60F7046E-4CBE-439A-BB56-AC5B11BD5B41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60F7046E-4CBE-439A-BB56-AC5B11BD5B41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60F7046E-4CBE-439A-BB56-AC5B11BD5B41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60F7046E-4CBE-439A-BB56-AC5B11BD5B41}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CA67F85A-84FB-4582-9BCC-3CD64647475C} = {362132E8-A5DF-473B-8213-40FBA06568BD}
+		{4A723462-6B05-487E-B725-C3B8C5EACE6B} = {362132E8-A5DF-473B-8213-40FBA06568BD}
+		{7646933E-D4B6-41BF-8FEA-FA7BADAD76E2} = {362132E8-A5DF-473B-8213-40FBA06568BD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2802A560-FDFB-4D15-A301-BB673298750A}
+	EndGlobalSection
+EndGlobal

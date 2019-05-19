@@ -1,0 +1,50 @@
+PUT /_template/my_rest_log_template
+{
+  "index_patterns": [
+    "my_rest_log*"
+  ],
+  "settings": {
+    "number_of_shards": 10,
+    "number_of_replicas": 1
+  },
+  "mappings": {
+    "dynamic_templates": [
+      {
+        "nested_template": {
+          "match_mapping_type": "object",
+          "match": "*_nested",
+          "mapping": {
+            "type": "nested"
+          }
+        }
+      },
+      {
+        "object_template": {
+          "match_mapping_type": "object",
+          "match": "*_object",
+          "mapping": {
+            "type": "object"
+          }
+        }
+      },
+      {
+        "text_template": {
+          "match_mapping_type": "string",
+          "match": "*_text",
+          "mapping": {
+            "type": "text"
+          }
+        }
+      },
+      {
+        "keyword_template": {
+          "match_mapping_type": "string",
+          "match": "*_keyword",
+          "mapping": {
+            "type": "keyword"
+          }
+        }
+      }
+    ]
+  }
+}

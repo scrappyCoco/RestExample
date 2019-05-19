@@ -1,0 +1,70 @@
+---
+version: '3.6'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.0.1
+    container_name: elasticsearch
+    ports: ['9200:9200']
+    networks: ['stack']
+    environment:
+      - discovery.type=single-node
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.0.1
+    container_name: kibana
+    ports: ['5601:5601']
+    networks: ['stack']
+    depends_on: ['elasticsearch']
+
+  logstash:
+    image: scrappycoco/my-rest-logstash
+    container_name: logstash
+    networks: ['stack']
+    depends_on: ['elasticsearch']
+    volumes:
+      - log-data:/var/lib/my-rest/log
+
+  # Prepare index templates for logs.
+  elastic-configure:
+    image: scrappycoco/my-rest-elastic-configurator
+    container_name: elastic-configure
+    networks: ['stack']
+    depends_on: ['elasticsearch']
+
+  # MsSql example database.
+  database:
+    image: scrappycoco/my-rest-database
+    container_name: database
+#    ports: ["1433:1433"]
+    networks: ['stack']
+
+  # Web API which produces logs.
+  web-api:
+    image: scrappycoco/my-rest-web-api
+    container_name: web-api
+    networks: ['stack']
+    ports: ['8100:8100']
+    depends_on: ['elasticsearch', 'database']
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+      - ASPNETCORE_URLS=http://web-api:8100
+    volumes:
+      - log-data:/var/lib/my-rest/log
+
+  # Example Web API consumer.
+  web-site:
+    image: scrappycoco/my-rest-web-site
+    container_name: web-site
+    networks: ['stack']
+    ports: ['8200:8200']
+    depends_on: ['web-api']
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker
+      - ASPNETCORE_URLS=http://web-site:8200
+
+networks: {stack: {}}
+
+volumes:
+  log-data:
+    driver: local
+    name: my-rest-log-data

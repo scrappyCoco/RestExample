@@ -1,0 +1,96 @@
+@using WebSite.Api
+@model CompanyViewModel
+
+@{
+    ViewBag.Title = "Companies";
+    Layout = "_Layout";
+}
+
+@section Scripts
+{
+    <script type="text/javascript">
+        $(".dropdown-menu li a").click(function(){
+          $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+          $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+          $("#status").val($(this).data('value'));
+        });
+    </script>
+}
+
+
+<div class="form-inline">
+    <form asp-controller="Company" asp-action="List" method="get" id="filter">
+        @* Код статуса *@
+        <input type="hidden" id="status" name="status" value="@Model.CurrentStatusCode"/>
+
+        @* Статус *@
+        <div class="input-group dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                @{
+                    string statusName = "Status";
+                    if (Model.CurrentStatusCode != null)
+                    {
+                        statusName = Model.Statuses.ToDictionary(k => k.Key, v => v.Value)[Model.CurrentStatusCode];
+                    }
+
+                    @statusName
+                }
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" id="company-status" aria-labelledby="dropdownMenu1">
+                @foreach (KeyValuePairOfStringAndString status in Model.Statuses)
+                {
+                    <li>
+                        <a href="#" data-value="@status.Key">@status.Value</a>
+                    </li>
+                }
+            </ul>
+        </div>
+
+        @* Наименование компании *@
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"></span>
+            </div>
+            <input type="text" name="name" class="form-control" placeholder="Company name"
+                   aria-label="Company name" aria-describedby="basic-addon1"
+                   value="@Model.CurrentCompanyName"/>
+        </div>
+
+        <button type="submit" class="btn btn-secondary">Filter</button>
+    </form>
+</div>
+
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Number</th>
+        <th scope="col">Name</th>
+        <th scope="col">Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    @{
+        int rowNumber = 1;
+        foreach (Company company in Model.Companies)
+        {
+            <tr>
+                <th scope="row">
+                    @(Model.PagingInfo.Offset + rowNumber++)
+                </th>
+                <td>@company.Number</td>
+                <td>@company.Name</td>
+                <td>@company.Status</td>
+            </tr>
+        }
+    }
+    </tbody>
+</table>
+
+<div page-model="@Model.PagingInfo" page-action="List" page-classes-enabled="true"
+     page-class="btn" page-class-normal="btn-secondary"
+     company-name="@Model.CurrentCompanyName" company-status="@Model.CurrentStatusCode"
+     page-class-selected="btn-primary" class="btn-group pull-right m-1">
+</div>

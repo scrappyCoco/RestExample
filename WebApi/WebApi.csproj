@@ -1,0 +1,70 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <DocumentationFile>bin\Release\WebApi.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <DocumentationFile>bin\Debug\WebApi.xml</DocumentationFile>
+        <NoWarn>1701;1702;1591</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Folder Include="wwwroot\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="log4net" Version="2.0.8" />
+        <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.7" />
+        <PackageReference Include="Microsoft.AspNetCore" Version="2.1.3" />
+        <PackageReference Include="Microsoft.AspNetCore.HttpsPolicy" Version="2.1.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.1.2" />
+        <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="2.2.10" />
+        <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="4.0.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="4.0.1" />
+        <PackageReference Include="Swashbuckle.Core" Version="5.6.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Common\Common.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Update="Model\Request\GetCompaniesCountRequest.*.cs">
+            <DependentUpon>GetCompaniesCountRequest.cs</DependentUpon>
+        </Compile>
+        <Compile Update="Database\CompanySqlClient.Impl.cs">
+          <DependentUpon>CompanySqlClient.cs</DependentUpon>
+        </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Update="Model\Request\GetCompaniesRequest.*.cs">
+            <DependentUpon>GetCompaniesRequest.cs</DependentUpon>
+        </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Update="log4net.Development.config">
+            <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Update="log4net.Docker.config">
+            <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Update="appsettings.Docker.json">
+            <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Update="appsettings.Development.json">
+            <CopyToPublishDirectory>Always</CopyToPublishDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+</Project>
