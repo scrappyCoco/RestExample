@@ -28,7 +28,7 @@ namespace WebApi.Controllers
 			_dictionaryDataSource = dictionaryDataSource;
 			MethodExecutor = new MethodExecutor()
 				.SetCache(memoryCache)
-				.SetLogger(logger, ActionKind.Exception);
+				.SetLogger(logger, ActionKind.Exception, ActionKind.Execute);
 		}
 
 		public MethodExecutor MethodExecutor { get; }

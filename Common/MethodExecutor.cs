@@ -51,9 +51,9 @@ namespace Common
 			void WriteLog(ActionKind actionKind, Exception exception = null)
 			{
 				if (stopwatch == null) return;
-				if (_logKinds != null && _logKinds.Any() && !_logKinds.Contains(actionKind)) return;
 				stopwatch.Stop();
-
+				if (_logKinds.Any() && !_logKinds.Contains(actionKind)) return;
+				
 				LogRow logRow = new LogRow(
 					className,
 					methodName,
@@ -61,8 +61,8 @@ namespace Common
 					actionKind,
 					startTime,
 					stopwatch.Elapsed,
-					_connectionInfo.RemoteIpAddress.ToString(),
-					_connectionInfo.LocalIpAddress.ToString(),
+					$"{_connectionInfo.RemoteIpAddress}:{_connectionInfo.RemotePort}",
+					$"{_connectionInfo.LocalIpAddress}:{_connectionInfo.LocalPort}",
 					exception);
 
 				_logger.Write(logRow);

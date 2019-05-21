@@ -51,10 +51,7 @@ namespace WebApi.Controllers
 				CompanyName = name
 			};
 
-			ActionResult companiesResponse =
-				await this.ExecuteAsync(_companyDataSource.GetCompaniesAsync, getCompaniesRequest);
-
-			return companiesResponse;
+			return await this.ExecuteAsync(_companyDataSource.GetCompaniesAsync, getCompaniesRequest);
 		}
 	}
 }
