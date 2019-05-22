@@ -4,7 +4,7 @@
 // </auto-generated>
 //----------------------
 
-namespace WebSite.Api
+namespace Coding4fun.WebSite.Api
 {
     #pragma warning disable
 

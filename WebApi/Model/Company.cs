@@ -1,6 +1,6 @@
 using JetBrains.Annotations;
 
-namespace WebApi.Model
+namespace Coding4fun.WebApi.Model
 {
 	/// <summary>
 	///     Компания.

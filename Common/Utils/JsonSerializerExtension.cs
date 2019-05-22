@@ -1,7 +1,7 @@
 using System.IO;
 using Newtonsoft.Json;
 
-namespace Common.Utils
+namespace Coding4fun.Common.Utils
 {
 	public static class JsonSerializerExtension
 	{

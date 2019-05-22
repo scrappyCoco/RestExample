@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace WebApi.Model.Response
+namespace Coding4fun.WebApi.Model.Response
 {
 	/// <summary>
 	///     Список компаний.

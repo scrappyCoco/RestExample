@@ -3,6 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp2.1</TargetFramework>
         <DebugType>full</DebugType>
+        <RootNamespace>Coding4fun.WebSite</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

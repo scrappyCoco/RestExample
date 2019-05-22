@@ -1,4 +1,4 @@
-namespace WebSite.Model
+namespace Coding4fun.WebSite.Model
 {
 	public class ErrorViewModel
 	{

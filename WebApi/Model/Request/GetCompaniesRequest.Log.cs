@@ -1,7 +1,7 @@
-using Common.Log;
-using It = WebApi.Model.Request.GetCompaniesRequest;
+using Coding4fun.Common.Logging;
+using It = Coding4fun.WebApi.Model.Request.GetCompaniesRequest;
 
-namespace WebApi.Model.Request
+namespace Coding4fun.WebApi.Model.Request
 {
 	public partial class GetCompaniesRequest : ILogSerializable
 	{

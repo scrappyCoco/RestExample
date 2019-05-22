@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace WebApi.Database
+namespace Coding4fun.WebApi.Database
 {
 	/// <summary>
 	///     Источник справочных данных.

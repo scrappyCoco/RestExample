@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace Common.Sql
+namespace Coding4fun.Common.Sql
 {
 	public class SqlClient
 	{

@@ -1,4 +1,4 @@
-namespace WebApi.Model.Request
+namespace Coding4fun.WebApi.Model.Request
 {
 	/// <summary>
 	///     Запрос на получение количества компаний.

@@ -1,12 +1,12 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Coding4fun.WebSite.Api;
+using Coding4fun.WebSite.Model.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using WebSite.Api;
-using WebSite.Model.ViewModel;
 
-namespace WebSite.Controllers
+namespace Coding4fun.WebSite.Controllers
 {
 	public class CompanyController : Controller
 	{

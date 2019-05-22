@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
-using Common.Utils;
-using WebApi.Model;
-using WebApi.Model.Request;
-using WebApi.Model.Response;
+using Coding4fun.Common.Utils;
+using Coding4fun.WebApi.Model;
+using Coding4fun.WebApi.Model.Request;
+using Coding4fun.WebApi.Model.Response;
 
-namespace WebApi.Database
+namespace Coding4fun.WebApi.Database
 {
 	internal partial class CompanyDataSqlClient
 	{

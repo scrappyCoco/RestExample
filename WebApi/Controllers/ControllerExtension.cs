@@ -1,11 +1,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using Common.Log;
+using Coding4fun.Common.Logging;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebApi.Controllers
+namespace Coding4fun.WebApi.Controllers
 {
 	/// <summary>
 	///     Декоратор контроллера.

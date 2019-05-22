@@ -1,6 +1,6 @@
 using JetBrains.Annotations;
 
-namespace WebApi.Model.Request
+namespace Coding4fun.WebApi.Model.Request
 {
 	/// <summary>
 	///     Запрос на получение списка компаний.

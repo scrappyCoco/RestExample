@@ -1,4 +1,4 @@
-namespace Common.Utils
+namespace Coding4fun.Common.Utils
 {
 	public static class StringExtension
 	{

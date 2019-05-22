@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Elasticsearch.Net;
 using Nest;
 
-namespace ElasticConfigurator
+namespace Coding4fun.ElasticConfigurator
 {
 	internal static class Program
 	{

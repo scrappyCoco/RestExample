@@ -1,10 +1,10 @@
 using System.Threading.Tasks;
-using Common.Sql;
+using Coding4fun.Common.Sql;
+using Coding4fun.WebApi.Model.Request;
+using Coding4fun.WebApi.Model.Response;
 using Microsoft.Extensions.Configuration;
-using WebApi.Model.Request;
-using WebApi.Model.Response;
 
-namespace WebApi.Database
+namespace Coding4fun.WebApi.Database
 {
 	internal partial class CompanyDataSqlClient : ICompanyDataSource
 	{

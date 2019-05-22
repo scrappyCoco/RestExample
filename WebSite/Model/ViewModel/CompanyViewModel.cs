@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using WebSite.Api;
+using Coding4fun.WebSite.Api;
 
-namespace WebSite.Model.ViewModel
+namespace Coding4fun.WebSite.Model.ViewModel
 {
 	public class CompanyViewModel
 	{

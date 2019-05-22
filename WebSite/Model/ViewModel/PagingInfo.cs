@@ -1,6 +1,6 @@
 using System;
 
-namespace WebSite.Model.ViewModel
+namespace Coding4fun.WebSite.Model.ViewModel
 {
 	public class PagingInfo
 	{

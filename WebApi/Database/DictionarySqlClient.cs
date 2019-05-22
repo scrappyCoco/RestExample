@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
-using Common.Sql;
+using Coding4fun.Common.Sql;
 using Microsoft.Extensions.Configuration;
 
-namespace WebApi.Database
+namespace Coding4fun.WebApi.Database
 {
 	internal class DictionarySqlClient : IDictionaryDataSource
 	{

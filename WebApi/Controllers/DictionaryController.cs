@@ -1,14 +1,14 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Common;
-using Common.Log;
+using Coding4fun.Common;
+using Coding4fun.Common.Logging;
+using Coding4fun.WebApi.Database;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
-using WebApi.Database;
 
-namespace WebApi.Controllers
+namespace Coding4fun.WebApi.Controllers
 {
 	/// <summary>
 	///     Справочники.

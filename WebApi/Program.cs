@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace WebApi
+namespace Coding4fun.WebApi
 {
 	public static class Program
 	{

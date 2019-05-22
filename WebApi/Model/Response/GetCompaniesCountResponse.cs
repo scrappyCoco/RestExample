@@ -1,4 +1,4 @@
-namespace WebApi.Model.Response
+namespace Coding4fun.WebApi.Model.Response
 {
 	/// <summary>
 	///     Ответ с количеством компаний.

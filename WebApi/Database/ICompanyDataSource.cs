@@ -1,8 +1,8 @@
 using System.Threading.Tasks;
-using WebApi.Model.Request;
-using WebApi.Model.Response;
+using Coding4fun.WebApi.Model.Request;
+using Coding4fun.WebApi.Model.Response;
 
-namespace WebApi.Database
+namespace Coding4fun.WebApi.Database
 {
 	/// <summary>
 	///     Источник данных по компаниям.

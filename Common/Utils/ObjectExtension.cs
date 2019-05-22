@@ -1,7 +1,7 @@
-using Common.Log;
+using Coding4fun.Common.Logging;
 using Newtonsoft.Json;
 
-namespace Common.Utils
+namespace Coding4fun.Common.Utils
 {
 	public static class ObjectExtension
 	{

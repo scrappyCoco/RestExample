@@ -1,14 +1,14 @@
 using System.Threading.Tasks;
-using Common;
+using Coding4fun.Common;
+using Coding4fun.WebApi.Database;
+using Coding4fun.WebApi.Model.Request;
+using Coding4fun.WebApi.Model.Response;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
-using WebApi.Database;
-using WebApi.Model.Request;
-using WebApi.Model.Response;
 
-namespace WebApi.Controllers
+namespace Coding4fun.WebApi.Controllers
 {
 	/// <summary>
 	///     Компании.

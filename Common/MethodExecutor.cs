@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using Common.Log;
-using Common.Utils;
+using Coding4fun.Common.Logging;
+using Coding4fun.Common.Utils;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 
-namespace Common
+namespace Coding4fun.Common
 {
 	public class MethodExecutor
 	{

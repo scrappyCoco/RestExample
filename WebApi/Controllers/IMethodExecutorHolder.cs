@@ -1,6 +1,6 @@
-using Common;
+using Coding4fun.Common;
 
-namespace WebApi.Controllers
+namespace Coding4fun.WebApi.Controllers
 {
 	public interface IMethodExecutorHolder
 	{

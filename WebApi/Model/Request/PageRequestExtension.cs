@@ -1,4 +1,4 @@
-namespace WebApi.Model.Request
+namespace Coding4fun.WebApi.Model.Request
 {
 	/// <summary>
 	///     Расширения для <c>IPageRequest</c>.
