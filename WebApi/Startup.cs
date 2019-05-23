@@ -5,7 +5,6 @@ using Coding4fun.WebApi.Database;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -15,13 +14,11 @@ namespace Coding4fun.WebApi
 {
 	internal class Startup
 	{
-		public Startup(IConfiguration configuration, IHostingEnvironment env)
+		public Startup(IHostingEnvironment env)
 		{
-			Configuration = configuration;
 			Environment = env;
 		}
 
-		private IConfiguration Configuration { get; }
 		private IHostingEnvironment Environment { get; }
 
 		// This method gets called by the runtime. Use this method to add services to the container.

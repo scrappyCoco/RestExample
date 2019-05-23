@@ -9,7 +9,6 @@ namespace Coding4fun.WebApi.Model.Request
 		///     Инициализация запроса.
 		/// </summary>
 		/// <param name="companyFilter">Фильтр компаний.</param>
-		/// <param name="connectionInfo">Информация о соединении.</param>
 		public GetCompaniesCountRequest(ICompanyFilter companyFilter)
 		{
 			CompanyName = companyFilter.CompanyName;

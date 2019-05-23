@@ -17,9 +17,6 @@ namespace Coding4fun.WebApi.Model.Request
 			);
 		}
 
-		public string RemoteIpAddress { get; set; }
-		public string LocalIpAddress { get; set; }
-
 		/// <inheritdoc />
 		public LogJsonSerializer JsonSerializer { get; } = SERIALIZER;
 	}

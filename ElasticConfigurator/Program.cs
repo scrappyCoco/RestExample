@@ -40,32 +40,40 @@ namespace Coding4fun.ElasticConfigurator
 				["number_of_shards"] = 10,
 				["number_of_replicas"] = 0
 			});
-			indexTemplateRequest.Mappings = new TypeMapping();
-			indexTemplateRequest.Mappings.DynamicTemplates = new DynamicTemplateContainer();
-			indexTemplateRequest.Mappings.DynamicTemplates.Add("nested_template", new DynamicTemplate
+			indexTemplateRequest.Mappings = new TypeMapping
 			{
-				MatchMappingType = "object",
-				Match = "*_nested",
-				Mapping = new NestedProperty()
-			});
-			indexTemplateRequest.Mappings.DynamicTemplates.Add("object_template", new DynamicTemplate
-			{
-				MatchMappingType = "object",
-				Match = "*_object",
-				Mapping = new ObjectProperty()
-			});
-			indexTemplateRequest.Mappings.DynamicTemplates.Add("text_template", new DynamicTemplate
-			{
-				MatchMappingType = "string",
-				Match = "*_text",
-				Mapping = new TextProperty()
-			});
-			indexTemplateRequest.Mappings.DynamicTemplates.Add("keyword_template", new DynamicTemplate
-			{
-				MatchMappingType = "string",
-				Match = "*_keyword",
-				Mapping = new KeywordProperty()
-			});
+				DynamicTemplates = new DynamicTemplateContainer
+				{
+					{
+						"nested_template",
+						new DynamicTemplate
+						{
+							MatchMappingType = "object", Match = "*_nested", Mapping = new NestedProperty()
+						}
+					},
+					{
+						"object_template",
+						new DynamicTemplate
+						{
+							MatchMappingType = "object", Match = "*_object", Mapping = new ObjectProperty()
+						}
+					},
+					{
+						"text_template",
+						new DynamicTemplate
+						{
+							MatchMappingType = "string", Match = "*_text", Mapping = new TextProperty()
+						}
+					},
+					{
+						"keyword_template",
+						new DynamicTemplate
+						{
+							MatchMappingType = "string", Match = "*_keyword", Mapping = new KeywordProperty()
+						}
+					}
+				}
+			};
 
 			await elasticClient.PutIndexTemplateAsync(indexTemplateRequest);
 		}

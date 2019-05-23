@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Coding4fun.Common.Logging;
 using Coding4fun.Common.Utils;
@@ -53,7 +54,6 @@ namespace Coding4fun.Common
 				if (stopwatch == null) return;
 				stopwatch.Stop();
 				if (_logKinds.Any() && !_logKinds.Contains(actionKind)) return;
-				
 				LogRow logRow = new LogRow(
 					className,
 					methodName,
@@ -61,8 +61,8 @@ namespace Coding4fun.Common
 					actionKind,
 					startTime,
 					stopwatch.Elapsed,
-					$"{_connectionInfo.RemoteIpAddress}:{_connectionInfo.RemotePort}",
-					$"{_connectionInfo.LocalIpAddress}:{_connectionInfo.LocalPort}",
+					$"{Dns.GetHostEntry(_connectionInfo.RemoteIpAddress)}",
+					$"{Dns.GetHostEntry(_connectionInfo.LocalIpAddress):_connectionInfo.LocalPort}",
 					exception);
 
 				_logger.Write(logRow);

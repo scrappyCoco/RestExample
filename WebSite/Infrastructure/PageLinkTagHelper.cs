@@ -1,4 +1,5 @@
 using Coding4fun.WebSite.Model.ViewModel;
+using JetBrains.Annotations;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.Routing;
@@ -7,14 +8,15 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace Coding4fun.WebSite.Infrastructure
 {
+	[UsedImplicitly]
 	[HtmlTargetElement("div", Attributes = "page-model")]
 	public class PageLinkTagHelper : TagHelper
 	{
-		private readonly IUrlHelperFactory urlHelperFactory;
+		private readonly IUrlHelperFactory _urlHelperFactory;
 
 		public PageLinkTagHelper(IUrlHelperFactory helperFactory)
 		{
-			urlHelperFactory = helperFactory;
+			_urlHelperFactory = helperFactory;
 		}
 
 		[ViewContext]
@@ -32,7 +34,7 @@ namespace Coding4fun.WebSite.Infrastructure
 
 		public override void Process(TagHelperContext context, TagHelperOutput output)
 		{
-			IUrlHelper urlHelper = urlHelperFactory.GetUrlHelper(ViewContext);
+			IUrlHelper urlHelper = _urlHelperFactory.GetUrlHelper(ViewContext);
 			TagBuilder result = new TagBuilder("div");
 			for (int i = 1; i <= PageModel.TotalPages && i <= 10; i++)
 			{
